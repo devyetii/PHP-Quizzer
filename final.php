@@ -15,15 +15,12 @@
     </header>
     <main>
         <div class="container">
-            <h2>Test your PHP Knowledge</h2>
-            <p>This is an MCQ to test your PHP knowledge</p>
-            <ul>
-                <li><strong>Number of questions: </strong>5</li>
-                <li><strong>Type: </strong>MCQ</li>
-                <li><strong>Estimated Time: </strong>4 min.</li>
-            </ul>
-            <a href="question.php?n=1" class="start">Start Quiz</a>
+            <h2>You're Done!</h2>
+            <p>Congrats! You have completed the test!</p>
+            <p>Final Score: 5</p>
+            <a href="question.php?n=1" class="start">Take Again</a>
         </div>
+
     </main>
     <footer>
         <div class="container">
