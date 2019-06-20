@@ -1,4 +1,16 @@
 <?php include 'database.php';?>
+<?php 
+    /*
+    *   Get the Question
+    */
+
+    $query1 = "SELECT * FROM `questions`";
+
+    //Get Result
+    $res = $mysqli->query($query1) or die($mysqli->error.__LINE__);
+    $q_count = $res->num_rows;
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,9 +31,9 @@
             <h2>Test your PHP Knowledge</h2>
             <p>This is an MCQ to test your PHP knowledge</p>
             <ul>
-                <li><strong>Number of questions: </strong>5</li>
+                <li><strong>Number of questions: </strong><?php echo $q_count; ?></li>
                 <li><strong>Type: </strong>MCQ</li>
-                <li><strong>Estimated Time: </strong>4 min.</li>
+                <li><strong>Estimated Time: </strong><?php echo $q_count*0.5; ?> mins.</li>
             </ul>
             <a href="question.php?n=1" class="start">Start Quiz</a>
         </div>
