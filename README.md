@@ -1,5 +1,6 @@
-#PHP Quizzer
-##Simple PHP Quiz Generator using MySQLi
+# PHP Quizzer
+
+## Simple PHP Quiz Generator using MySQLi
 
 v1.0
 - Simple GUI using plain CSS
