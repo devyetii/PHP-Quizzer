@@ -1,3 +1,6 @@
+<?php include 'database.php'; ?>
+<?php session_start(); ?>
+<?php $total = $mysqli->query("SELECT * FROM `questions`")->num_rows; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,7 +20,7 @@
         <div class="container">
             <h2>You're Done!</h2>
             <p>Congrats! You have completed the test!</p>
-            <p>Final Score: 5</p>
+            <p>Final Score: <?php echo $_SESSION['score']; ?> out of <?php echo $total; ?></p>
             <a href="question.php?n=1" class="start">Take Again</a>
         </div>
 

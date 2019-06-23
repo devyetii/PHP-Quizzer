@@ -32,12 +32,13 @@ main {
     padding-bottom: 20px;
 }
 
-a.start {
+.start {
     display: inline-block;
     color: #666666;
     background: #f4f4f4;
     border: 1px dotted #cccccc;
     padding: 6px 13px;
+    margin-top: 10px;
 }
 
 .current {

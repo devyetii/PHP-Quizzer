@@ -36,6 +36,7 @@
                 <li><strong>Estimated Time: </strong><?php echo $q_count*0.5; ?> mins.</li>
             </ul>
             <a href="question.php?n=1" class="start">Start Quiz</a>
+            <a href="add.php" class="start">Add Questions</a>
         </div>
     </main>
     <footer>

@@ -4,21 +4,26 @@
     $qno = (int) $_GET['n'];
 
     /*
-    *   Get the Question
+    **   BAD PRACTICE ! Getting total no. of questions
+    */
+
+    $q_count = $mysqli->query("SELECT * FROM `questions`")->num_rows or die ($mysqli->error.__LINE__);
+
+    
+    /*
+    **   Get the Question
     */
 
     $query1 = "SELECT * FROM `questions` WHERE question_number = $qno";
-
     //Get Result
     $res1 = $mysqli->query($query1) or die($mysqli->error.__LINE__);
     $question = $res1->fetch_assoc();
 
     /*
-    *   Get the Choices
+    **   Get the Choices
     */
 
     $query2 = "SELECT * FROM `choices` WHERE question_number = $qno";
-
     //Get Result
     $res2 = $mysqli->query($query2) or die($mysqli->error.__LINE__);
 ?>
@@ -41,7 +46,7 @@
     <main>
         <div class="container">
             <div class="current">
-                Question <?php echo $qno ?> of 5
+                Question <?php echo $qno ?> of <?php echo $q_count ?>
             </div>
             <p class="question">
                 <?php echo $question['text']; ?>
@@ -50,10 +55,11 @@
                 <ul>
                     <?php while ($choice = $res2->fetch_assoc()) : ?>
                         <li><input type="radio" name="choice" value="<?php echo $choice['id']; ?>">
-                            <?php echo $choice['text']; ?>
+                            <?php echo htmlspecialchars($choice['text']); ?>
                         </li>
                     <?php endwhile; ?>
                 </ul>
+                <input type="hidden" name="qno" value="<?php echo $qno; ?>">
                 <input type="submit" value="Submit">
             </form>
         </div>
